@@ -1,7 +1,7 @@
 #wrapper {
 	margin: 1em;
 	border: 1px solid #333;
-	min-width: 950px;
+	min-width: 1340px;
 	min-height: 750px;
 }
 
@@ -17,11 +17,21 @@
 }
 
 #main {
-	width: 920px;
-	height: 920px;
+	width: 820px;
+	height: 720px;
 	padding: 1em;
+	display: inline-block;
+	border: 1px solid #333;
 }
 
 #main #main-canvas {
 	border: 1px solid #CCC;
+}
+
+#sidebar {
+	width: 400px;
+	padding: 1em;
+	border: 1px solid #F00;
+	float: right;
+	display: inline-block;
 }
