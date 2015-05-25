@@ -1,0 +1,23 @@
+#wrapper {
+	min-width: 1400px;
+	margin: 2em;
+}
+
+#view {
+	text-align: center;
+}
+
+
+#main-canvas {
+	border: 1px solid #333;
+	margin: 1em;
+	position: relative;
+}
+
+#controls {
+	float: right;
+	width: 250px;
+	margin-right: 300px;
+	border: 1px solid #ccc;
+}
+

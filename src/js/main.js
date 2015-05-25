@@ -14,14 +14,6 @@ function init() {
 	startGameLoop();
 };
 
-function JWorld () {
-	this.GamePaused = true;
-	this.frameSize = 1000 / 30;
-	this.startTick = window.performance.now();
-	this.currentTick = 0;
-	this.frame = 0;
-	this.frameCount = 0;
-};
 
 JWorld.prototype.setupDOM = function () {
 	var self = this;
@@ -46,6 +38,10 @@ JWorld.prototype.setupDOM = function () {
 	console.log("Canvas: ", this.canvas, this.pauseButton);
 };
 
+JWorld.prototype.loadAssets = function () {
+
+};
+
 JWorld.prototype.render = function () {
 	this.context.clearRect(0, 0, 800, 600);
 	this.context.fillText("Frame: " + this.frameCount, 10, 50);
@@ -62,9 +58,9 @@ JWorld.prototype.gameLoop = function () {
 
 	this.render();
 	
-	this.currentTick = window.performance.now();
-	this.update( (this.currentTick - this.startTick) );
-	this.startTick = this.currentTick;
+	var currentTick = window.performance.now();
+	this.update( (currentTick - this.startTick) );
+	this.startTick = currentTick;
 	this.frame++;
 
 	if (this.frame === 30) {
@@ -72,7 +68,7 @@ JWorld.prototype.gameLoop = function () {
 		this.frame = 0;
 	}
 	
-
+	// TODO: get rid of the bind
 	requestAnimationFrame(world.gameLoop.bind(world));
 };
 
